@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagina integrali</title>
+    </head>
+
+    <body>
+        <h1>SEMAFORO</h1>
+
+        <form method="post">
+            <input type="text" name="tempoRosso" placeholder="tempo Rosso">&nbsp&nbsp<input type="submit" value="Submit" style="background-color: coral;" name="submit" class="btn"><br>
+            <input type="text" name="tempoGiallo" placeholder="tempo Giallo">&nbsp&nbsp<input type="submit" value="Change" style="background-color:pink;" name="Change" class="btn"><br>
+            <input type="text" name="tempoVerde" placeholder="tempo Verde"><br>
+        </form>
+        {% if solution %}
+            <p class="solution"><strong>stato del semaforo:</strong> {{ solution }}
+        {% endif %}
+    </body>
+
+</html>
