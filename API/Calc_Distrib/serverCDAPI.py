@@ -24,6 +24,7 @@ def tieni():
     cur.execute(f"UPDATE operazioni SET result = {ris} WHERE id={idOp}")
     cur.execute("commit")
     rows = cur.fetchall()
+    con.close()
     risp="appost"
     return jsonify(risp)
     
@@ -31,7 +32,6 @@ def tieni():
 @app.route(f"/api/calcDisp/dammi", methods=['GET'])
 def dammi():
    #?id={id}
-    print("oaaa")
     id=int(request.args['id'])
     print(id)
     idOp, op=findOp(id)
@@ -56,6 +56,7 @@ def findOp(idC):
         for row in rows:
             idOp =int(row[0])
             op = row[1]
+    con.close()
         
     return idOp, op
 
